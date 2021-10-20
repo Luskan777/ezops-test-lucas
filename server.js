@@ -38,6 +38,6 @@ io.on('connection', () =>{
 mongoose.connect(dbUrl , (err) => { 
     console.log('mongodb connected',err);
  })
-var server = http.listen(80, () => {
+var server = http.listen(3000, () => {
   console.log('server running', server.address().port);
 });
