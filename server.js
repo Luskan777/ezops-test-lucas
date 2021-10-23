@@ -32,11 +32,16 @@ app.post('/messages', (req, res) => {
     res.sendStatus(200);
   })
 })
+
+
+
+
+
 io.on('connection', () =>{
   console.log(' Um Usuário se conectou !!')
 })
 mongoose.connect(dbUrl , (err) => { 
-    console.log('mongodb connected',err);
+    console.log('mongodb conectado',err);
  })
 var server = http.listen(3000, () => {
   console.log('server running', server.address().port);
