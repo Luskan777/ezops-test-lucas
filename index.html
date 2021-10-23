@@ -9,30 +9,33 @@
     <script src='socket.io/socket.io.js'></script>
 </head>
 <body>
-<div class="container">
-   <br>
+   
+<div id="simple-chat">
+   <div class="container">
+      <br>
       <div class="card card-bordered">
-         <div class="card-header">
-            <div class="btn btn-xs btn-secondary">
-               <h1>Simple Chat</h1>  
-            </div>
-         </div>
-            <br>
-               <div class="ps-container ps-theme-default ps-active-y" id="messages" style="overflow-y: scroll !important; height:400px !important;" >
-
+          <div class="card-header">
+             <div class="btn btn-xs btn-secondary">
+                <h1>Simple Chat</h1>  
+             </div>
+          </div>
+               <br>
+                <div class="ps-container ps-theme-default ps-active-y" id="messages" style="overflow-y: scroll !important; height:400px !important;">
                </div>
-            <br>
-            <input id = "name" class="form-control" placeholder="Nome">
-            <br>
-               <textarea id = "message" class="form-control" placeholder="Digite sua mensagem">
-               </textarea>
-            <br>
-               <button id="send" class="btn btn-success">Enviar</button>
+               <br>
+               <input id = "name" class="form-control" placeholder="Nome">
+               <br>
+                  <textarea id = "message" class="form-control" placeholder="Digite sua mensagem">
+                  </textarea>
+               <br>
+                  <button id="send" class="btn btn-success">Enviar</button>
       </div>
-
+   </div>
 </div>
+
 <script>
-    var socket = io();
+  
+   var socket = io();
     $(() => {
     $("#send").click(()=>{
        sendMessage({
@@ -42,7 +45,8 @@
       getMessages()
     })
 
-socket.on('message', addMessages)
+
+   socket.on('message', addMessages)
 
 
 function addMessages(message){
@@ -53,7 +57,8 @@ function addMessages(message){
       
       `)
    }
-function getMessages(){
+
+   function getMessages(){
   $.get('http://localhost:3000/messages', (data) => {
    data.forEach(addMessages);
    })
@@ -61,6 +66,8 @@ function getMessages(){
 function sendMessage(message){
    $.post('http://localhost:3000/messages', message)
  }
+
+
 </script>
 </body>
 </html>
