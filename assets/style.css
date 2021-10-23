@@ -6,3 +6,14 @@
 .card-header {
     text-align: center;
 }
+
+
+.ps-container{
+
+    position: relative;
+    -ms-touch-action: auto;
+    touch-action: auto;
+    overflow: hidden !important;
+    -ms-overflow-style: none
+
+}
