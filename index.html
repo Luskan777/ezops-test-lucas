@@ -9,19 +9,21 @@
 </head>
 <body>
 <div class="container">
- <br>
- <div class="jumbotron">
- <h1 class="display-4">Escreva uma Mensagem</h1>
- <br>
- <input id = "name" class="form-control" placeholder="Nome">
- <br>
- <textarea id = "message" class="form-control" placeholder="Digite uma mensagem">
-</textarea>
- <br>
- <button id="send" class="btn btn-success">Enviar</button>
- </div>
- <div id="messages">
-</div>
+   <br>
+      <div class="jumbotron">
+            <h1 class="display-4">Escreva uma Mensagem</h1>
+            <br>
+               <div id="messages">
+               </div>
+            <br>
+            <input id = "name" class="form-control" placeholder="Nome">
+            <br>
+               <textarea id = "message" class="form-control" placeholder="Digite sua mensagem">
+               </textarea>
+            <br>
+               <button id="send" class="btn btn-success">Enviar</button>
+      </div>
+
 </div>
 <script>
     var socket = io();
