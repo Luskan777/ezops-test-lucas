@@ -13,30 +13,32 @@ var Message = mongoose.model('Message',{
 })
 var dbUrl = 'mongodb+srv://lucas:p3j9ge@simple-chat.fzmfe.mongodb.net/simple-chat?retryWrites=true&w=majority'
 
+
 app.get('/messages', (req, res) => {
   Message.find({},(err, messages)=> {
     res.send(messages);
   })
 })
-app.get('/messages', (req, res) => {
-  Message.find({},(err, messages)=> {
-    res.send(messages);
-  })
-})
+
 app.post('/messages', (req, res) => {
-  var message = new Message(req.body);
-  message.save((err) =>{
-    if(err)
-      sendStatus(500);
-    io.emit('message', req.body);
-    res.sendStatus(200);
-  })
+     var message = new Message(req.body);
+        message.save((err) =>{
+             if(err)
+                sendStatus(500);
+                io.emit('message', req.body);
+                res.sendStatus(200);
+              })
 })
+
+
+
+
+
 io.on('connection', () =>{
   console.log(' Um Usuário se conectou !!')
 })
 mongoose.connect(dbUrl , (err) => { 
-    console.log('mongodb connected',err);
+    console.log('mongodb conectado',err);
  })
 var server = http.listen(3000, () => {
   console.log('server running', server.address().port);

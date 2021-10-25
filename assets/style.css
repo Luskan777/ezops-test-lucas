@@ -1,0 +1,27 @@
+
+
+.display-4{
+
+    text-align: center;
+}
+
+.card-header {
+    text-align: center;
+}
+
+
+.ps-container{
+
+    position: relative;
+    -ms-touch-action: auto;
+    touch-action: auto;
+    overflow: hidden !important;
+    -ms-overflow-style: none
+}
+
+
+.card{
+   
+    border: 3px solid rgba(0,0,0,.125);
+    border-radius: .50rem;
+}

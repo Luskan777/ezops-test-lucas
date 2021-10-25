@@ -3,28 +3,41 @@
 <head>
     <title>Simple Chat</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src='socket.io/socket.io.js'></script>
 </head>
 <body>
-<div class="container">
- <br>
- <div class="jumbotron">
- <h1 class="display-4">Escreva uma Mensagem</h1>
- <br>
- <input id = "name" class="form-control" placeholder="Name">
- <br>
- <textarea id = "message" class="form-control" placeholder="Escreva a sua Mensagem">
-</textarea>
- <br>
- <button id="send" class="btn btn-success">Enviar</button>
- </div>
- <div id="messages">
+
+
+
+<div id="simple-chat">
+   <div class="container">
+      <br>
+      <div class="card card-bordered">
+          <div class="card-header">
+             <div class="btn btn-xs btn-secondary">
+                <h1>Simple Chat</h1>  
+             </div>
+          </div>
+               <br>
+                <div class="ps-container ps-theme-default ps-active-y" id="messages" style="overflow-y: scroll !important; height:400px !important;">
+               </div>
+               <br>
+                  <input id = "name" class="form-control" placeholder="Name">
+               <br>
+                  <textarea id = "message" class="form-control" placeholder="Digite sua mensagem">
+                  </textarea>
+               <br>
+                  <button id="send" class="btn btn-success">Enviar</button>
+      </div>
+   </div>
 </div>
-</div>
+
 <script>
-    var socket = io();
+  
+   var socket = io();
     $(() => {
     $("#send").click(()=>{
        sendMessage({
@@ -34,22 +47,29 @@
       getMessages()
     })
 
-socket.on('message', addMessages)
+
+   socket.on('message', addMessages)
 
 
 function addMessages(message){
    $("#messages").append(`
+      <div>
       <h4> ${message.name} </h4>
-      <p>  ${message.message} </p>`)
+      <p>  ${message.message} </p> </div>
+      
+      `)
    }
-function getMessages(){
-  $.get('https://simple-chat.plid.in/messages', (data) => {
+
+   function getMessages(){
+  $.get('http://localhost:3000/messages', (data) => {
    data.forEach(addMessages);
    })
- }
-function sendMessage(message){
-   $.post('https://simple-chat.plid.in/messages', message)
- }
+       }
+   function sendMessage(message){
+     $.post('http://localhost:3000/messages', message)
+         };
+
+
 </script>
 </body>
 </html>
