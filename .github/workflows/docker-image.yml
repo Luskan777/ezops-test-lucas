@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Building da image Docker do Simple-Chat
-      run: docker build . --file Dockerfile --tag simple-chat:$(date +%s)
+      run: docker build . --file Dockerfile --tag simple-chat:ci
