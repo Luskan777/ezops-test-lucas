@@ -1,4 +1,71 @@
+#simple-chat{
 
+    background-image: linear-gradient(#dc3545c7, #024083e8);
+}
+
+
+.ps-container{
+
+    margin: auto;
+    width: 98%;
+    padding: 10px;
+    border: 3px solid #dfdfdf;
+}
+
+.form-control{
+
+    width: 98%;
+    margin: auto;
+}
+
+#logo img{
+
+    width: 10%;
+}
+
+#logo h1{
+
+    font-family: system-ui;
+    font-size: 3.5rem;
+    font-weight: 400;
+}
+
+#users-names{
+
+    margin: 3px;
+    height: 15px;
+
+
+}
+
+#users-names h4{
+
+    text-align: left;
+    font-size: 1.0rem;
+    line-height: 1.0;
+    font-weight: bolder;
+    font-style: oblique;
+    font-family: fantasy;
+    color: #495057;
+    font-weight: 500;
+
+}
+
+#message-box{
+
+    padding: 0px 15px;
+    width: fit-content;
+    border-radius: 5px;
+    background-image: linear-gradient(#006bdf, #2c84e4);
+    margin-bottom: 2em;
+    font-size: larger;
+    text-align: left;
+    font-family: sans-serif;
+    color: white;
+
+
+    
+}
 
 .display-4{
 
@@ -7,6 +74,7 @@
 
 .card-header {
     text-align: center;
+    background-color: rgb(244 244 244);
 }
 
 
