@@ -17,12 +17,6 @@ jobs:
     - name: Building da image Docker do Simple-Chat
       run: docker build . --file Dockerfile --tag simple-chat:ci
       
-  logs:
-    needs: build
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2
     - name: listando modulos necessários e instalados do NPM
       run: docker run simple-chat list
       
