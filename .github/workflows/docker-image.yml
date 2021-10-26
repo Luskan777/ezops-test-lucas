@@ -9,10 +9,21 @@ on:
 jobs:
 
   build:
-
+ 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Building da image Docker do Simple-Chat
       run: docker build . --file Dockerfile --tag simple-chat:ci
+      
+  logs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: logs do container
+    - run: docker run simple-chat list
+      
+  
+      
