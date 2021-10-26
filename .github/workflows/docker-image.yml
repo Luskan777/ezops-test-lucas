@@ -20,7 +20,7 @@ jobs:
     - name: listando modulos necessários e instalados do NPM
       run: docker run simple-chat:ci list
       
-    steps:
+    - name: teste npm
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
       with:
