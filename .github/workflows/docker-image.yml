@@ -18,7 +18,7 @@ jobs:
       run: docker build . --file Dockerfile --tag simple-chat:ci
       
     - name: listando modulos necessários e instalados do NPM
-      run: docker run simple-chat list
+      run: docker run simple-chat:ci list
       
   
       
