@@ -20,13 +20,5 @@ jobs:
     - name: listando modulos necessários e instalados do NPM
       run: docker run simple-chat:ci list
       
-    - name: teste npm
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-    - run: npm install
-    - run: npm test
-      
   
       
