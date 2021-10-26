@@ -15,10 +15,17 @@
 <div id="simple-chat">
    <div class="container">
       <br>
+
+      <div>
+
+         
+      </div>
+
       <div class="card card-bordered">
           <div class="card-header">
-             <div class="btn btn-xs btn-secondary">
-                <h1>Simple Chat</h1>  
+             <div id="logo">
+                <img src="assets/icon.png">
+                <h1>SIMPLE CHAT</h1>  
              </div>
           </div>
                <br>
@@ -53,8 +60,9 @@
 
 function addMessages(message){
    $("#messages").append(`
-      <div>
-      <h4> ${message.name} </h4>
+      <div id="users-names">
+      <h4> ${message.name} </h4> </div>
+      <div id="message-box">
       <p>  ${message.message} </p> </div>
       
       `)
