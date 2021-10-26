@@ -23,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: logs do container
-    - run: docker run simple-chat list
+      run: docker run simple-chat list
       
   
       
