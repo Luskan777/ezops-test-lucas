@@ -1,0 +1,24 @@
+name: Testando build da imagem Docker
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+ 
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Building da image Docker do Simple-Chat
+      run: docker build . --file Dockerfile --tag simple-chat:ci
+      
+    - name: listando modulos necessários e instalados do NPM
+      run: docker run simple-chat:ci list
+      
+  
+      
