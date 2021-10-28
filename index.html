@@ -66,12 +66,12 @@ function addMessages(message){
    }
 
    function getMessages(){
-  $.get('https://simple-chat.plid.in/messages', (data) => {
+  $.get('/messages', (data) => {
    data.forEach(addMessages);
    })
        }
    function sendMessage(message){
-     $.post('https://simple-chat.plid.in/messages', message)
+     $.post('/messages', message)
          };
 
 

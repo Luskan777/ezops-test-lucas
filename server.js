@@ -11,7 +11,12 @@ var Message = mongoose.model('Message',{
   name : String,
   message : String
 })
-var dbUrl = 'mongodb+srv://lucas:p3j9ge@simple-chat.fzmfe.mongodb.net/simple-chat?retryWrites=true&w=majority'
+
+require("dotenv").config();
+
+const db = process.env.DB_URL
+
+const dbUrl = db
 
 
 app.get('/messages', (req, res) => {
@@ -38,7 +43,7 @@ io.on('connection', () =>{
   console.log(' Um Usuário se conectou !!')
 })
 mongoose.connect(dbUrl , (err) => { 
-    console.log('mongodb conectado',err);
+    console.log(`Conectando MongoDB em ${dbUrl}`,err);
  })
 var server = http.listen(3000, () => {
   console.log('server running', server.address().port);
