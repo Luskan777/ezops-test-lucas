@@ -3,8 +3,6 @@ name: Testando build da imagem Docker
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
 
